@@ -1,0 +1,17 @@
+group 'com.hainet'
+version '1.0.0'
+
+apply plugin: 'java'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile group: 'org.mybatis', name: 'mybatis', version: '3.4.4'
+    compile group: 'com.h2database', name: 'h2', version: '1.4.196'
+
+    compileOnly group: 'org.projectlombok', name: 'lombok', version: '1.16.18'
+}

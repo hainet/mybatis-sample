@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+    PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+  <typeAliases>
+    <package name="com.hainet.mybatis.sample.domain" />
+  </typeAliases>
+  <environments default="dev">
+    <environment id="dev">
+      <transactionManager type="JDBC" />
+      <dataSource type="POOLED">
+        <property name="driver" value="org.h2.Driver" />
+        <property name="url" value="jdbc:h2:mem:mybatis-sample;INIT=CREATE TABLE person (id INT AUTO_INCREMENT PRIMARY KEY, name CHAR, age INT)" />
+        <property name="username" value="sa" />
+        <property name="password" value="" />
+      </dataSource>
+    </environment>
+  </environments>
+  <mappers>
+    <mapper resource="com/hainet/mybatis/sample/mapper/PersonMapper.xml" />
+  </mappers>
+</configuration>
